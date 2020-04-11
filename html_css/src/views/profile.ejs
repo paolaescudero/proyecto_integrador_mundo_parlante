@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Perfil'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+        <%- include('partials/header') %>
+      
+
+        <% if (userID == user.id || userRole == 'admin') { %> 
+        <!-- aca va el contenido ****************************** -->
+        <div class="row bg-dark py-3">
+
+            <div class="col-12 col-md-2 offset-md-2 py-1 text-center text-md-right">
+                <img src="/images/avatars/<%= user.avatar %>" class="img-thumbnail" width="200">
+                
+            </div>
+
+            <div class="col-12 col-md-6 py-1 text-center text-md-left">
+                <h3>Hola <%= `${user.first_name} ${user.last_name}` %></h3>
+                <p class="font-abel">Tu email es: <a href="mailto:<%= user.email %>" class="mail"><%= user.email %></a></p>
+                <p class="font-abel">Tipo de usuario: <%= user.role %></p>
+                <hr>
+                
+                <a href="/users/editarUser/<%= user.id %>" class="mr-3 font-abel"><i class="fa fa-user pr-2" aria-hidden="true"></i>Editar info del perfil</a>
+                <a href="/users/editarAvatar/<%= user.id %>" class="mr-3 font-abel"><i class="fa fa-picture-o pr-2" aria-hidden="true"></i> Cambiar foto</a>
+            
+            <% if(userRole == 'user'){ %> 
+                <a href="/users/logout" class="font-abel"><i class="fa fa-sign-out pr-2" aria-hidden="true"></i> Cerrar Sesión</a>
+            <% } %>
+             
+            </div>
+            <div class="col-12 col-md-2 py-1 text-center text-md-left"></div>
+        </div>
+        <!-- ↑↑↑ aca termina el contenido ****************************** -->
+    <% } else { %> 
+        
+        <div class="row text-center">
+
+            <div class="col-12">
+                <h3>Epa, epa... A donde vamos?</h3>
+            </div>
+
+            <div class="col-12">
+                <img src="/images/hackerman.PNG" class="img-thumbnail img-fluid" width="400px" alt="">
+            </div>
+
+            <div class="col-12 mt-2">
+                <%if (userID == ""){%>
+                    <p>Por favor, volvé al <a href="/" style="text-decoration: underline">inicio</a> o <a href="/users/login" style="text-decoration: underline">logueate</a></p>
+                <% } else { %> 
+                    <p>Por favor, volvé a <a href="/users/profile/<%= userID %>" style="text-decoration: underline">tu perfil</a></p>
+                <% } %> 
+            </div>
+        </div>
+    <% } %> 
+        <!-- Footer -->
+		<%- include('partials/footer') %>
+        <!-- ↓↓ aca termina el DIV main container ↓↓ -->
+        </div>
+</body>
+ </html>

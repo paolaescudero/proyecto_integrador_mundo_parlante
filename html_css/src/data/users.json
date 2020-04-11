@@ -1,0 +1,90 @@
+[
+ {
+  "id": 1,
+  "name": "Paola",
+  "lastname": "Escudero",
+  "email": "paolaescudero@gmail.com",
+  "password": "",
+  "avatar": "user_avatar_1577221280654.jpeg"
+ },
+ {
+  "id": 2,
+  "name": "Lisa",
+  "lastname": "Simpson",
+  "email": "meatismurder@mail.com",
+  "password": "123",
+  "avatar": "user_avatar_1577578550085.PNG"
+ },
+ {
+  "id": 3,
+  "name": "DAilan",
+  "lastname": "Kifky",
+  "email": "unelefante@mail.com",
+  "password": "$2b$10$aS.5IAZH.qH6uddkNrCh3uh/wDMTFNhnTcpbEMkoODr47X3yOtobO",
+  "avatar": "user_avatar_1577578790932.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Rick",
+  "lastname": "Sanchez",
+  "email": "funeralswithcake@mail.com",
+  "password": "$2b$10$tZk.MYas30p5/4zJ30/I/u9NGV94lsphX6MmEPLlogeaj5DoIlguS",
+  "avatar": "user_avatar_1577579630725.PNG"
+ },
+ {
+  "id": 5,
+  "name": "Randy",
+  "lastname": "Marsh",
+  "email": "cockmagic@mail.com",
+  "password": "$2b$10$UQFtmNAvA0ZueCxoQcXfy.zPrMtZKDIj4JMY2Rj1yZ0Y7quEgh0o.",
+  "avatar": "user_avatar_1577580433156.PNG"
+ },
+ {
+  "id": 6,
+  "name": "Sandra",
+  "lastname": "Milena",
+  "email": "milena@mail.com",
+  "password": "$2b$10$V/biBYGhpzQuptv4j9z6k.LrgtLg3SjmE2ubb4zQtuT9SpZoex2UW",
+  "avatar": "user_avatar_1579203156775.PNG"
+ },
+ {
+  "id": 7,
+  "name": "Alexa",
+  "lastname": "Contreras",
+  "email": "alexaila@outlook.com",
+  "password": "$2b$10$mxhymWmcHA7ZhY7m//icXe19t0yybSpY7TO8Rkdc0/Rf5oo6zK6MG",
+  "avatar": "user_avatar_1579216350838.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Stan",
+  "lastname": "Marsh",
+  "email": "everythingsucks@mail.com",
+  "password": "$2b$10$tcbettQyW.evsonmM8T6yuUrJNU7bhQQx3gbQlO/NT6muXjaB1KSC",
+  "avatar": "user_avatar_1580509324852.PNG"
+ },
+ {
+  "id": 9,
+  "name": "Marge",
+  "lastname": "Bouvier",
+  "email": "marge@mail.com",
+  "password": "$2b$10$DMPdxjrxmrEIq0YqQE/zseU08DCSHIKZolHYdxnL4YqMUEk87lQke",
+  "avatar": "user_avatar_1580584879034.PNG"
+ },
+ {
+  "id": 10,
+  "name": "sr",
+  "lastname": "burros",
+  "email": "srburros@mail.com",
+  "password": "$2b$10$CzbrtBRmunXi00gt/Q7DpOFzo.PMrvThlDKz0mj14V.M2sdbtIIdm",
+  "avatar": "user_avatar_1580601555334.png"
+ },
+ {
+  "id": 11,
+  "name": "registro",
+  "lastname": "JSON",
+  "email": "registro@mail.com",
+  "password": "$2b$10$498tXl5JcThfuXhAq9VJWuAHAgPvMMhkesASCJIt8n9VaIj9z1Kk2",
+  "avatar": "user_avatar_1580677166095.jpg"
+ }
+]

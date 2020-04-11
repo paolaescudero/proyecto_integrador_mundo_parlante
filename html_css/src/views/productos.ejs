@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Productos'}) %>
+
+<body>
+
+<!-- Plugin de Facebook -->
+
+
+
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid justify-content-center" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+		<!-- TITULO SECCION -->
+		<div class="row bg-dark">
+			<div class="col-12 text-center mt-3">
+				<h1>CONOZCA NUESTROS PRODUCTOS</h1 c>
+			</div>
+		</div>
+		<!-- productos -->
+		<div class="row bg-dark">
+			<div class="col-12 d-none d-md-block col-md-3 offset-md-1 text-left py-3">
+				<h3 class="row text-white pl-2">BÚSQUEDA</h3>
+				
+				<hr class="d-none d-md-block">
+				<div class="d-none d-md-block">
+					<div class="col-12 font-abel">
+						<h4>Filtrar por Marca</h4>
+					</div>
+					
+
+					<div class="col-12 font-abel">
+						<form action="/productos" method="POST">
+							<!-- para que las marcas las cree solas -->
+							<% brands.forEach(oneBrand => { %>
+									<!-- el IF a continuacion es para saber que checkboxes estan checked -->
+									<!-- ponemos select en false -->
+									<% let select = false  %>
+									<!-- recorremos el array de brands_selected  -->
+									<% brands_selected.forEach(selectedBrand => { %>
+										<!-- si las brands de brads_selected coinciden con el brand.id cambiamos la variable "select" a true  -->
+										<% if(selectedBrand == oneBrand.id) {select = true} %>
+									<% }) %>
+										<!-- si select esta en true le ponemos 'checked' a ese checkbox y si no, se lo sacamos  -->
+									<% if(select == true) {%>
+										<input type="checkbox" name="marca" checked value="<%= oneBrand.id %>">
+									<%} else {%>
+										<input type="checkbox" name="marca" value="<%= oneBrand.id %>">
+									<% } %>
+								<label for="marca"><%= oneBrand.name %></label>
+								<br>
+							<% }) %>
+							
+						</form>
+					</div>
+				</div>
+					<hr class="no-display-sm">
+					<div class="row no-display-sm">
+				</div>
+
+				<!-- facebook comments -->
+				
+
+					
+
+				
+
+			</div>
+			<div class="col-12 col-md-7 text-left py-3">
+
+			<!-- TITULO Y BOTON DE AGREGAR PRODUCTO -->
+				<div class="row">
+					<div class="col-12 col-md-6 pt-1 pl-2">
+						<h3 class="text-amarillo ">NOVEDADES</h3>
+					</div>
+
+					<% if (isAuthenticated == true && userRole == "admin") { %>
+						<div class="col-12 col-md-6 pt-1 pl-2">
+							<p class="text-white text-right"><a href="/productosAdd"><i class="fa fa-plus"
+										aria-hidden="true"></i> Agregar Producto</a></p>
+						</div>
+					
+					<% } %> 
+				</div>
+
+				<div class="row mt-1">
+					<div class="col-12 card-columns">
+
+						<!-- este forEach recorre todos los productos -->
+						<% products.forEach(oneProduct => { %>
+						<div class="card bg-wh">
+							<div class="car-img-top"></div>
+							<div class="card-body">
+								<!-- aca crea un link para acceder al detalle con el id del prod -->
+								<a href="/productos/detalle/<%= oneProduct.id %>"><img
+										src="../../images/productos/<%= oneProduct.image %>" width="150px"
+										class="card-img-top" alt=""></a>
+								<div class="card-title">
+									<a href="/productos/detalle/<%= oneProduct.id %>">
+										<h4 class="font-abel text-black pt-1"><%= oneProduct.name %></h4>
+									</a>
+								</div>
+								<div class="card-text">
+									<!-- recorre las marca y selecciona el nombre de la marca segun el ID del producto q buscamos en el primer for -->
+									<% brands.forEach(oneBrand => { %>
+										<% if(oneBrand.id == oneProduct.brand_id){%>
+										<p class="text-left text-black">Marca: <%= oneBrand.name%></p>
+										<% } %>
+									<% }) %>
+								</div>
+								<div class="card-text">
+									<h4 class="text-right text-black">$<%= oneProduct.price %></h4>
+								</div>
+								<div class="card-link text-right">
+
+
+						<!-- comprueba q este logueado antes de entrar al carrito -->
+									<% if (isAuthenticated == true) { %>
+										<form action="/carrito" method="POST">
+
+											<input type="hidden" name="product" value="<%= oneProduct.id%>">
+											<button type="submit" class="btn-amarillo" alt="Agregar al carrito">Agregar al carrito</button>
+
+										</form>
+									<% } else { %> 
+										<form action="/addToCartGuest" method="POST">
+
+											<input type="hidden" name="product" value="<%= oneProduct.id%>">
+											<button type="submit" class="btn-amarillo" alt="Agregar al carrito">Agregar al carrito</button>
+
+										</form>
+									
+									
+									<% } %> 
+								</div>
+							</div>
+						</div>
+						<% }); %>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="fb-comments" data-href="http://localhost:3000/productos" data-width="" data-numposts="5"></div>
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+	<script src="/js/buscarProductos.js"></script>
+</body>
+
+</html>

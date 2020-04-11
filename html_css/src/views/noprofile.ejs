@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Perfil'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+        <%- include('partials/header') %>
+      
+
+        <div class="row text-center">
+
+            <div class="col-12">
+                <h3>Ooooole! este usuario no existe.</h3>
+                <p>Seguí participando, volvé al <a href="/" style="text-decoration: underline">inicio</a> o <a href="/users/login" style="text-decoration: underline">logueate</a></p>
+            </div>
+
+            <div class="col-12">
+                <img src="/images/hackerman.PNG" class="img-thumbnail img-fluid" width="400px" alt="">
+            </div>
+
+            
+        </div>
+   
+        <!-- Footer -->
+		<%- include('partials/footer') %>
+        <!-- ↓↓ aca termina el DIV main container ↓↓ -->
+        </div>
+</body>
+ </html>

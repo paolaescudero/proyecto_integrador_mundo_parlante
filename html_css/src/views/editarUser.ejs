@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Registro'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+		
+	
+		
+			<!-- ACA VAN LAS COSAS DEL FORMULARIO -->
+			<div class="row titulo-seccion justify-content-center"><h1>Editar Información</h1></div>
+			<div class="form-group justify-content-center">
+			<form action="/users/editarUser/<%= user.id %>" method="POST" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-12">
+						<label>Nombre:</label>
+						<input type="text" name="first_name" value="<%= user.first_name %>" class="form-control" placeholder="">
+					</div>
+					<div class="col-12">
+						<label>Apellido:</label>
+						<input type="text" name="last_name" value="<%= user.last_name %>" class="form-control" placeholder="">
+					</div>
+					<div  class="col-12">
+						<label>Email:</label>
+						<input type="email"name="email" class="form-control" value="<%= user.email %>" placeholder="">
+					</div>
+					<div class="col-12">
+						<label>Contraseña:</label>
+						<input type="password" name="password" readonly class="form-control" value="<%= user.password %>" placeholder="ingresa tu nueva clave">
+					</div>
+					<div  class="col-12">
+						<label>Repetir Contraseña:</label>
+						<input type="password" name="rePassword" value="<%= user.password %>" class="form-control" placeholder="ingresa tu nueva clave otra vez">
+					</div>
+					
+					<div  class="col-12">
+						<label></label>
+					<button type="submit" class="btn btn-amarillo btn-block">Editar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+	
+</body>
+</html>

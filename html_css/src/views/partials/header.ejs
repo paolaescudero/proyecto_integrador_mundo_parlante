@@ -1,0 +1,51 @@
+<header>
+    <nav class="navbar navbar-expand-lg f-22">
+		<a class="navbar-brand" href="/"><img src="/images/logo_img.PNG"  class="rounded logo" alt="Mundo Parlante Logo"></a>
+	
+	<button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#myOwnNav" aria-controls="myOwnNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+		</button>
+		
+		<div class="collapse navbar-collapse  font-bebas ml-lg-5" id="myOwnNav">
+			<ul class="navbar-nav mr-auto  justify-content-center align-self-center">
+				<li class="nav-item text-center"><a class="nav-link" href="/">Home</a></li>
+				<li class="nav-item text-center"><a class="nav-link" href="/productos">Productos</a></li>
+				<li class="nav-item text-center"><a class="nav-link" href="/quienes-somos">Quienes Somos</a></li>
+				<li class="nav-item text-center"><a class="nav-link" href="/contacto">Contacto</a></li>
+
+				<!-- carrito valida q estes logueado -->
+				<% if (isAuthenticated == true ) { %>
+					<li class="nav-item text-center"><a class="nav-link" href="/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i> <span class="badge ml-1 mt-0 bg-ye text-black font-abel f-12"><%= cartQty %></span></a></li>
+				<% } else { %>
+					<li class="nav-item text-center"><a class="nav-link" href="/users/login"><i class="fa fa-shopping-cart " aria-hidden="true"></i> <span class="badge ml-1 mt-0 bg-ye text-black font-abel f-12"><%= cartQty %></span></a></li>
+				<% } %>
+			</ul>
+			<ul class="navbar-nav  ml-auto align-items-center">
+				<% if (isAuthenticated == true ) { %>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle font-abel f-12" href="#" id="dropUser" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<img src="/images/avatars/<%= userAvatar %>" width="40" style="border-radius: 100%;">
+						Hi <%= userName %>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="dropUser" style="left: auto; right: 0;">
+						<a class="dropdown-item font-abel" href="/users/profile/<%= userID %>">My profile</a>
+						<div class="dropdown-divider"></div>
+						<% if (userRole == 'admin' ) { %>
+							<a class="dropdown-item font-abel" href="/users/listado">Listado de Usuarios</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item font-abel" href="http://localhost:4000">Dashboard</a>
+							<div class="dropdown-divider"></div>
+						<% } %> 
+						<a class="dropdown-item font-abel" href="/users/logout">Logout</a>
+					</div>
+				</li>
+				<% } else { %>
+				<li class="nav-item"><a class="nav-link" href="/users/register">Register</a></li>
+				<li class="nav-item"><a class="nav-link" href="/users/login">Login</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</nav>
+</header>

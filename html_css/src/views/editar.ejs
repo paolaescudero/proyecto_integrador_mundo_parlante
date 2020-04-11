@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Editar Producto'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+	
+			<!-- ACA VAN LAS COSAS DEL FORMULARIO -->
+			<div class="row titulo-seccion justify-content-center"><h1>Editar un Producto</h1></div>
+			<div class="form-group justify-content-center">
+			<form action="/productos/editar/<%= product.id %>" method="POST" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-12">
+						<label>Nombre:</label>
+						<input type="text" name="name" value="<%= product.name %>" class="form-control" placeholder="Ej: Parlante 3m">
+					</div>
+					<div  class="col-12">
+						<label>Precio:</label>
+						<input type="number" name="price" value="<%= product.price %>" class="form-control" placeholder="Ej: AX23">
+					</div>
+				<div  class="col-12">
+                        <!-- <label>%= product.image %></label> -->
+                        <label>Imagen Actual:</label>
+                        <input type="text" readonly name="currentImage" value="<%= product.image %>" placeholder="NO la trae bart" class="form-control mt-1">
+                        <label>Subir Imagen nueva</label>
+						<input type="file" name="image" value="<%= product.image %>" class="form-control">
+					</div> 
+					<div class="col-12">
+						<label>Marca:</label>
+						<!-- <input type="number" name="brand_id" value="%= product.brand_id %>"  class="form-control" placeholder="Ej: BENQ"> -->
+						<select name="brand_id" class="form-control">
+							<option value="">Elegí una marca</option>
+							<% for (let i = 0; i < brand.length; i++) {%> 
+								<% if (brand[i].id == product.brand_id) {%>
+					
+									<option value="<%= brand[i].id%>" selected>
+										<%= brand[i].name%>
+									</option>
+									
+								<%} else {%>
+									<option value="<%= brand[i].id%>">
+										<%= brand[i].name%>
+									</option>
+								<%}%>
+							<%}%>
+							</select>
+					</div>
+					<div  class="col-12">
+						<label>Modelo:</label>
+						<input type="text"name="model" value="<%= product.model %>" class="form-control" placeholder="Ej: AX23">
+					</div>
+					<div  class="col-12">
+                        <label>Descripción:</label>
+                        <input type="text" value="<%= product.description %>" class="form-control" name="description">
+						<!-- <textarea name="description" maxlength="500" value="%= product.description %>" class="form-control"></textarea> -->
+					</div>
+					<div  class="col-12">
+						<label></label>
+					<button type="submit" class="btn btn-amarillo btn-block" >Editar Producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+	
+</body>
+</html>

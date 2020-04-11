@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Productos'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+		<div class="row justify-content-center my-3 bg-dark">
+			<div class="col-12 titulo-seccion mt-3 justify-content-center d-flex align-items-center" id="about-titulo">
+				<h1>Quienes Somos</h1>
+			</div>
+			
+			<!-- imagen izquierda -->
+			<div class="col-md-3 align-self-end d-sm-none d-md-block">
+				<img src="../../images/par_izq.PNG"  width="100%" alt="">
+			</div>
+
+			<!-- texto -->
+			<div class="col-12 col-md-6 text-center" id="about-parrafo">
+				<p>Somos fieles a nuestros principios fundacionales. También queremos mantener nuestra posición de liderazgo en nuestro negocio principal con productos de sonido neutral para cualquier necesidad de monitoreo, desde reproducción mono a multicanal. Nuestros clientes reciben un soporte primordial en todos los aspectos del campo, desde asesoramiento acústico y servicios de calibración hasta servicio técnico y larga vida del producto. Comprar un producto Genelec es la inversión más sólida en monitoreo de audio.
+				</p>
+				<p>Queremos ser únicos como empresa y esforzarnos por superar las expectativas en todos los aspectos de nuestro negocio. Esto significa ofrecer productos y servicios de primera clase a nuestros clientes finales y socios comerciales por igual.</p>
+				<p>Durante la última década, nuestro negocio se ha expandido más allá del segmento de monitores de estudio profesionales a mercados seleccionados de consumidores y de instalación de AV. Nuestros productos se encuentran en un número cada vez mayor de configuraciones domésticas e instalaciones audiovisuales, así como en sistemas residenciales de cine en casa, que dan vida a la música y las bandas sonoras como cuando se grababan. Aunque las aplicaciones pueden variar, una cosa sigue siendo la misma: el deseo de tener la mejor reproducción de sonido posible.</p>
+			</div>
+
+			<!-- imagen derecha -->
+			<div class="col-md-3 align-self-end d-sm-none d-md-block">
+				<img src="../../images/par_der.PNG"  width="100%" alt="">
+			</div>
+			
+		</div>
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+
+</html>

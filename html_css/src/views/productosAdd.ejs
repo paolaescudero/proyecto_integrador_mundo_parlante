@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Agregar Producto'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+	
+			<!-- ACA VAN LAS COSAS DEL FORMULARIO -->
+			<div class="row titulo-seccion justify-content-center"><h1>Agregar un Producto</h1></div>
+			<div class="form-group justify-content-center">
+
+			<form action="/productosAdd" method="POST" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-12">
+						<label>Nombre:</label>
+						<input type="text" name="name" class="form-control" placeholder="Nombre del producto" data-name="Nombre del Producto">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Precio:</label>
+						<input type="number" name="price" class="form-control" placeholder="Ej: 123456" data-name="Precio">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Foto Producto:</label>
+						<input type="file" name="image" class="form-control" data-name="Foto del Producto">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div class="col-12">
+						<label>Marca:
+						<!-- <input type="number" name="brand_id" class="form-control" placeholder="Ej: BENQ"> -->
+						<select name="brand_id" class="form-control" data-name="Marca"> 
+							<option value="">Elegí una marca</option>
+							<% brands.forEach(oneBrand => { %>
+							<option value="<%= oneBrand.id %>"> <%= oneBrand.name %> </option>
+							<% }) %>
+						</select>
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Modelo:</label>
+						<input type="text"name="model" class="form-control" placeholder="Ej: AX23" data-name="Modelo">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Descripción:</label>
+						<textarea name="description" maxlength="500" class="form-control" placeholder="describi el producto" data-name="Descripción"></textarea>
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label></label>
+					<button type="submit" class="btn btn-amarillo btn-block" >Agregar Producto</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+	<!-- Scripts de Validación -->
+	<script defer src="/js/validator.js"></script>
+	<script defer src="/js/validateProductosAdd.js"></script>
+</body>
+</html>

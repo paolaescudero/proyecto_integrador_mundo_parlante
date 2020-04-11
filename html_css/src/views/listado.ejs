@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Listado Usuarios'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid justify-content-center bg-gr" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+		<% if (isAuthenticated == false) { %>
+			<div class="text-center">
+				<h3>Oh No! No podes entrar!</h3>
+				<img src="/images/parlante_error.PNG" width="200px" alt="">
+				<p class="text-center text-amarillo font-abel">Necesitas estar <b>logueado</b> y ser <b>Administrador</b> para ingresar a esta sección</p>
+			</div>
+		<% } else if (userRole == "user"){ %>
+			<div class="text-center">
+				<h3>Oh No! No podes entrar!</h3>
+				<img src="/images/parlante_error.PNG" width="200px" alt="">
+				<p class="text-center text-amarillo font-abel f-22">Necesitas Ser <b>Administrador</b> para ingresar a esta sección</p>
+				<p class="text-center  font-abel">Tu rol actual es: <%= userRole %></p>
+				<p class="text-center  font-abel">Comunicate con el Administrador para que te de los permisos</p>
+			</div>
+		<% } else { %>
+		<!-- TITULO SECCION -->
+		<div class="row bg-dark">
+			<div class="col-12 text-center mt-3">
+				<h1>Listado de Usuarios</h1>
+			</div>
+			<div class="col-12 text-right">
+				
+				<a href="/users/listado-tabla" class=""><i class="fa fa-list" aria-hidden="true"></i> ver listado </a>
+				<a href="/users/listado" class="ml-2"><i class="fa fa-table" aria-hidden="true"></i> ver grilla </a>
+				
+			</div>
+		</div>
+		
+		<!-- contenido seccion -->
+		<div class="card-columns card-columns-users" id="contenido-seccion">
+
+			<% users.forEach(oneUser => { %> 
+
+				<div class="card mt-2 text-center">
+						<a href="/users/profile/<%= oneUser.id %>"><img class="img-card-top bg-bl img-fluid" src="/images/avatars/<%= oneUser.avatar %>" alt="Card image cap"></a>
+						<div class="card-body bg-bl">
+						<a href="/users/profile/<%= oneUser.id %>"></a><h5 class="card-title"><%= oneUser.first_name %> <%= oneUser.last_name %></h5></a>
+						<p class="card-text">Email: <%= oneUser.email %></p>
+						<p class="card-text">ID: <%= oneUser.id %></p>
+						<p class="card-text">Tipo de usuario: <%= oneUser.role %></p>
+						<form action="/users/borrar/" method="POST">
+							<input type="hidden" name="userid" value="<%= oneUser.id %>">
+							<button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true"></i> Borrar Usuario</button>
+						</form>
+						<hr>
+						<form action="/users/changerole" method="POST">
+							<p>Cambiar Rol:</p>
+							<input type="hidden" name="userid" value="<%= oneUser.id %>">
+						<% if(oneUser.role == "user") { %> 
+							<input type="radio" checked id="user" name="role" value="user">
+							<label for="user">User</label><br>
+							<input type="radio" id="admin" name="role" value="admin">
+							<label for="admin">Admin</label><br>
+						<% } else { %> 
+							<input type="radio"  id="user" name="role" value="user">
+							<label for="user">User</label><br>
+							<input type="radio" checked id="admin" name="role" value="admin">
+							<label for="admin">Admin</label><br>
+
+						<% } %> 
+
+							<button class="btn btn-warning" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Cambiar Rol</button>
+						</form>
+					</div>
+				</div>
+			
+			<% }); %>
+
+		</div> 
+	
+		<!-- FIN contenido seccion -->
+
+		<!-- fin del IF para ver si esta logueado -->
+		<% } %>
+
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+<script src="../../js/listadoTabla.js"></script>
+</html>

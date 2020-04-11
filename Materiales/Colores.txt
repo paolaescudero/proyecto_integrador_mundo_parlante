@@ -1,0 +1,37 @@
+=== COLORES ===
+Blanco: #FFFFFF
+Negro: #000000
+Amarillo: #FFF000
+Gris:#2D2D2D
+
+=== TIPOGRAFÍAS ===
+Familia: 'Bebas Neue'
+Versiones: 400
+Familia: 'Abel'
+Versiones: 400
+
+=== HEADER ===
+Logo, Menu
+Menu Usuario
+
+=== NAVBAR ===
+Home
+Productos
+Quienes Somos
+Contacto
+---
+Log in
+Register
+
+=== MAIN ===
+Titulo seccion Productos
+Carrito de compras
+Filtros
+Productos grilla
+
+=== TÍTULOS ===
+Tamaño: 36px
+Familia: 'Bebas Neue'
+
+=== FOOTER ===
+

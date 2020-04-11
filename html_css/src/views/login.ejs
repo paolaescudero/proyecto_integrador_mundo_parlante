@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Log In'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+	
+		<% if (isAuthenticated == false) {%> 
+			<!-- titulo -->
+		<div class="row titulo-seccion justify-content-center"><h1>Logueate</h1></div>
+		
+		
+		<!-- ROW para form e img -->
+		<div class="row justify-content-center">
+			<div class="col-12  col-md-6">
+			<div class="form-group justify-content-center">
+			<form action="/users/login" method="POST">
+				<div class="row">
+					<div  class="col-12">
+						<label class="pt-1">Email:</label>
+						<input type="email"name="email" class="form-control" placeholder="Ej: email@server.com">
+					</div>
+					<div class="col-12">
+						<label class="pt-1">Contraseña:</label>
+						<input type="password" name="password" class="form-control" placeholder="******">
+					</div>
+					<div class="col-12 ml-4 pt-2">
+						<input type="checkbox" class="form-check-input " name="remember_user"><label>Recordarme</label>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="btn btn-amarillo btn-block" >Log In</button>
+					</div>
+				</div>
+				<hr>
+			<!-- REGISTRATE! -->
+				<div class="row text-center justify-content-center">
+					<div  class="col-12 col-md-6">
+						<p>¿Todavía no tenes una cuenta?</p>
+						<a class="nav-link btn-amarillo text-black rounded f-16" href="/users/register">Registrate</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- columna para IMAGEN -->
+	<div class="col-12 col-md-6">
+
+		<img src="/images/parlante_login.png" class="img-fluid"width="450px" alt="">
+
+	</div>
+</div>
+
+<% } else { %> 
+	<div class="row d-flex justify-content-center">
+		<div class="col-12">
+			<h3 class="text-center">Ya estas logueado, mira arriba a la derecha! Ahi estas</h3>
+		</div>
+		<div class="col-12 text-center">
+			<img src="../../images/parlante_logueado.png" class="img-fluid " width="350px" alt="">
+		</div>
+	</div>
+<% } %> 
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+	
+</body>
+</html>

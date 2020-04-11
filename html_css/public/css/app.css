@@ -1,0 +1,295 @@
+*{
+  box-sizing: border-box;
+}
+/* [class*=col-]{
+  /* para hacer un debug*/
+  /* border: solid 1px red;*/
+  /* margin: 0; 
+} */
+/* ---------BORDERRSS ---------- */
+.br-bl{
+  border: black 1px solid;
+}
+.br-re{
+  border: red 1px solid;
+}
+
+/* ---------FIN BORDERRSS ---------- */
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.bg-wh{
+  background-color: #fff;
+}
+.bg-bl{
+  background-color: #000;
+}
+.bg-ye{
+  background-color: #fff000;
+}
+header{
+  background-color: #000;
+  display:block;
+}
+nav{
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  margin:0;
+  padding:0;
+  list-style: none;
+  display: inline-block; 
+}
+/* FONTS FAMILY STYLES */
+.font-abel{
+  font-family: 'Abel', sans-serif;
+}
+.font-bebas{
+  font-family: 'Bebas Neue', cursive;
+}
+label{
+    font-family: 'Abel', sans-serif;
+}
+/* FONTS FAMILY SIZES */
+/* FONT SIZES */
+.f-16{
+  font-size: 16px;
+}
+.f-18{
+  font-size: 18px;
+}
+.f-22{
+  font-size: 22px;
+}
+.f-24{
+  font-size: 24px;
+}
+.f-12{
+  font-size: 12px;
+}
+.f-10{
+  font-size: 10px;
+}
+
+/* ESTILOS TAGS */
+hr{
+  background-color: #6B6B6B;
+}
+a{
+  text-decoration: none;
+  color:#fff;
+  margin: 0;
+  padding: 0;
+
+}
+a:hover{
+  color:#fff000;
+}
+.reg-log{
+  color:#fff000;
+  border-radius: 5px;
+  padding: 0px 8px;
+}
+.reg-log:hover{
+  background-color: white;
+  color:black;
+  border-radius: 5px;
+  padding: 0px 8px;
+}
+p{
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Bebas Neue', cursive;
+}
+h1{
+  color:#FFF000;
+  font-size: 32px;
+}
+h3{
+  color:#FFF000;
+  font-size: 24px;
+}
+.text-white{
+  color:#FFFFFF;
+}
+.text-black{
+  color:#000000;
+}
+.text-amarillo{
+  color:#FFF000;
+}
+.mg-top{
+  margin-top: 10px;
+}
+.mg-right{
+  margin-right: 10px;
+}
+.container-fluid{
+ 
+  background: #000;
+  color: #ffffff;
+ 
+  
+  /*border: solid 1px blue; */
+}
+.img-contacto{
+  position: absolute;
+  left:0;
+  bottom:0;
+}
+.row{
+  padding:0;
+}
+.logo{
+  width:150px;
+}
+.welcome-img{
+  width:100%;
+}
+.main-content-title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 36px;
+}
+.filtros{
+  background-color: #2B2B2B;
+  font-family: 'Bebas Neue', cursive;
+
+}
+.filtros-content{
+  font-family: 'Abel', sans-serif;
+}
+.footer{
+  background-color: #fff;
+  color:#000;
+  font-family: 'Abel', sans-serif;
+}
+.footer a{
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+.form-group{
+  border:0px white solid;
+  padding:10px;
+  width:100%;
+  margin: 10px auto;
+  background-color: #000;
+}
+.btn-amarillo{
+  background-color: #FFF000;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.btn-amarillo:hover{
+  background-color: #6B6B6B;
+  color:#FFF;
+  border-radius: 5px;
+}
+.cont-prod-carrito{
+  background-color: #2B2B2B;
+  margin-top: 10px;
+}
+
+.mail{
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+.ficha-producto{
+  padding:15px;
+}
+
+
+.titulo-seccion{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 36px;
+  color: #FFF000;
+}
+button{
+  border-style: none;
+}
+
+
+
+
+
+/*para ocultar los filtros*/
+@media screen and (max-width: 767px){
+.no-display-sm{
+ /*  display:none;  */
+}
+}
+/* CSS para cuando mide a partir de 768 */
+@media screen and (min-width: 768px){
+ .f-md-16{
+  padding-left: 5px;
+  margin: 0;
+  font-size: 16px;
+ }
+  h1{
+    font-family: 'Bebas Neue', cursive;
+    color:#FFF000;
+    font-size: 42px;
+  }
+  h3{
+    color:#FFF000;
+    font-size: 32px;
+  }
+  .form-group{
+    border:0px white solid;
+    padding:10px;
+    width:90%;
+    margin: 10px auto;
+    background-color: #000;
+  }
+  .card-columns{
+    column-count: 2;
+  }
+  .vh-100{
+    height:100vh;
+  }
+}
+/* CSS para cuando mide a partir de 944 */
+@media screen and (min-width: 944px){
+  .f-md-16{
+   padding-left: 5px;
+   margin: 0;
+   font-size: 24px;
+  }
+  
+  h1{
+    font-family: 'Bebas Neue', cursive;
+    color:#FFF000;
+    font-size: 56px;
+  }
+  h3{
+    color:#FFF000;
+    font-size: 40px;
+  }
+  .form-group{
+    border:0px white solid;
+    padding:10px;
+    width:80%;
+    margin: 10px auto;
+    background-color: #000;
+  }
+  .card-columns{
+    column-count: 3;
+  }
+  .card-columns-users{
+    column-count: 4;
+  }
+  .vh-100{
+    height:100vh;
+  }
+ }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Productos'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+		<div class="row justify-content-center my-3 bg-dark">
+			<div class="col-12 titulo-seccion mt-3 justify-content-center d-flex align-items-center" id="about-titulo">
+				<img src="../../images/parlante_error_carrito.PNG" width="250px" alt="">
+			</div>
+			<div class="col-12 titulo-seccion mt-3 justify-content-center d-flex align-items-center" id="about-titulo">
+				<h1>ERROR!</h1>
+			</div>
+			<!-- ***PARRAFO Quienes Somos***** 
+			"D-FLEX ALIGN-ITEMS-CENTER es para que el texto se vea en el medio de la celda y no arriba o abajo-->
+			<div class="col-12 col-md-6 text-center" id="about-parrafo">
+				<h2>Este producto ya esta en tu carrito </h2>
+				<p>Podés ver tu carrito haciendo <a class="text-amarillo" href="/carrito">click aca</a></p>
+				<p>o seguir comprando <a class="text-amarillo" href="/productos">aca</a></p>
+			</div>
+		</div>
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+
+</html>

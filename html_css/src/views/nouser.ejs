@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Productos'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+		<div class="row justify-content-center my-3 bg-dark">
+
+			<div class="col-12 titulo-seccion mt-3 justify-content-center d-flex align-items-center" id="about-titulo">
+				<img src="../../images/parlante_error_nouser.PNG" width="250px" alt="">
+			</div>
+
+			<div class="col-12 titulo-seccion mt-3 justify-content-center d-flex align-items-center" id="about-titulo">
+				<h1>ERROR!</h1>
+			</div>
+			
+
+			<div class="col-12 col-md-6 text-center" id="about-parrafo">
+				<h2>No Existe un usuario con el mail: <%= email%></h2>
+				
+				<p>Verifica tu dirección de correo electronico y proba de nuevo haciendo <a class="text-amarillo" href="/users/login">click aca</a></p>
+				<p>Si no tenes una cuenta podes <a class="text-amarillo" href="/users/register">registrarte aca</a></p>
+			</div>
+		</div>
+		
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+
+</html>

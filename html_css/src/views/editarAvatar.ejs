@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Registro'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+
+
+
+		<!-- ACA VAN LAS COSAS DEL FORMULARIO -->
+		<div class="row titulo-seccion justify-content-center">
+			<h1>Subi una foto nueva!</h1>
+		</div>
+	<div class="row form-group justify-content-center">
+		<div class="col-12 col-md-6 align-self-center">
+			<div class="row">
+				<div class="col-12">
+					<form action="/users/editarAvatar/<%= user.id %>" method="POST" enctype="multipart/form-data">
+
+					<label>Elegi tu imagen</label>
+					<input type="file" id="avatar" name="avatar" class="form-control"
+						placeholder="elegi una foto de tu compu">
+				</div>
+
+				<div class="col-6 mt-2">
+					<label></label>
+					<button type="submit" class="btn  btn-amarillo btn-block">Subir</button>
+				</div>
+			</form>
+				
+				<div class="col-6 mt-2">
+					<label></label>
+					<button class="btn btn-dark font-abel  btn-block"><a class="" href="/users/profile/<%= user.id %>">Cancelar</a></button>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<img src="/images/parlante_cambiar_foto.png" class="img-fluid" width="300px" alt="">
+		</div>
+	</div>
+
+
+
+	<!-- Footer -->
+	<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+
+</html>

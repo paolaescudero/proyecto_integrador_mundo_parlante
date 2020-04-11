@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Contacto'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+				
+		<!-- titulo de la sección -->
+		<div class="row ">
+			<div class="col-12">
+				<h1 class="text-center justify-items-center my-3">Contacto</h2>
+				</div>
+			</div>
+		
+
+		<!-- row para ver que pasa -->
+			<div class="row">
+
+			<!-- Columna FORM -->
+			<div class="col-12 col-md-5 offset-1">
+					<form action="/contacto" method="POST" enctype="multipart/form-data" class="form-group">
+						<div class="row">
+							<!-- Columna para form de contacto -->
+							<div class="col-12 mt-2">
+								<form>
+								<div class="row">
+									<h4>Envianos un mensaje:</h4>
+								</div>
+								<div class="row">
+									<label>Nombre:</label>
+									<input type="text" name="name" class="form-control mb-1" placeholder="Ej: Ana">
+								</div>
+								<div class="row">
+									<label>Apellido:</label>
+									<input type="text" name="lastname" class="form-control mb-1" placeholder="Ej: Pérez">
+								</div>
+								<div  class="row">
+									<label>Email:</label>
+									<input type="email"name="email" class="form-control mb-1" placeholder="Ej: email@server.com">
+								</div>
+								<div class="row">
+									<label>Mensaje:</label>
+									<textarea type="text" name="mensaje" class="form-control mb-2" placeholder="Ej: Hola, tengo una consulta..."></textarea>
+								</div>
+								<div  class="row">
+									<label></label>
+								<button type="submit" class="btn btn-amarillo btn-block">Enviar</button>
+								</div>
+							</form>
+						</div>
+						<!-- Columna de informacion -->
+					</div>
+					<!-- ↑↑ aca termina el div de ROW -->
+				</form>
+			</div>
+
+			<!-- Columna DATOS -->
+			<div class="col-12 col-md-5 mt-3 mb-3 pr-5">
+				
+				
+				<h3 class="text-right">Donde Estamos</h3>
+				<p class="text-right f-24">Calle Falsa 123, Springfield, CO</p>
+				<p class="text-right f-24">+54911 5555-7896</p>
+				<p class="text-right f-24">Email: info@mundoparlante.com</p>
+
+				<div class="row card-img-overlay"><img src="../../images/contact-white.PNG" class="card-img  img-fluid img-contacto " alt=""></div>
+			</div>
+
+		<!-- aca termina el row  que agregue -->
+			
+		</div>
+		<!-- ------------------------------------ -->
+		
+			<br>
+		
+		<%- include('partials/footer') %>
+		
+	</div>
+	
+</body>

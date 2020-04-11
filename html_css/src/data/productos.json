@@ -1,0 +1,65 @@
+[
+ {
+  "id": 1,
+  "nombre": "Two Way Nearfield Monitor",
+  "marca": "Neumann",
+  "modelo": "KH 120 A G EU",
+  "precio": "3500",
+  "descripcion": "El KH 120 es el modelo pionero de Neumann y el criterio de desarrollo para monitores de estudio compactos. Ha sido una clase de referencia para el monitoreo de corto alcance desde 2011. Las enormes reservas de energía cumplen con la conducción de sonido de alta precisión. El resultado: máxima fidelidad de señal y transitorios claramente contorneados en toda la respuesta de frecuencia de diseño neutral. Esto le permite controlar con precisión la profundidad tonal, la imagen espacial e incluso los detalles más pequeños de la mezcla.",
+  "avatar": "product_avatar_1580588073653.png"
+ },
+ {
+  "id": 2,
+  "nombre": "Subwoofer",
+  "marca": "Neumann",
+  "modelo": "KH 750 DSP D G",
+  "precio": "1300",
+  "descripcion": "El compacto DSP KH 750 es la opción ideal para salas más pequeñas y monitores de estudio más pequeños. Tiene un Administrador de bajos único y flexible (2.0 / 0.1), entradas analógicas y digitales, cuatro modos de enrutamiento y controles acústicos adaptables para usarse en muchas configuraciones diferentes.\r\nLa aplicación opcional para iPad® Neumann.Control brinda acceso a muchas funciones adicionales. Esto incluye la posibilidad de alinear los monitores Neumann, que están conectados al subwoofer, a la sala utilizando la \"Alineación guiada\" patentada y controlando todo el sistema estéreo. Esto también incluye monitores analógicos.",
+  "avatar": "product_avatar_1580588211495.png"
+ },
+ {
+  "id": 3,
+  "nombre": "Subwoofer with 2.0/0",
+  "marca": "Neumann",
+  "modelo": "KH 810 G",
+  "precio": "1420",
+  "descripcion": "El KH810 es una respuesta a las demandas al ofrecer un 7.1 High Definition Bass Manager ™. La flexibilidad de este administrador de graves 7.1 omitible significa que también es compatible con todos los formatos estándar de consumo, desde mono hasta los últimos sistemas 7.1 HD.",
+  "avatar": "product_avatar_1580588293278.png"
+ },
+ {
+  "id": 4,
+  "nombre": "AUDIO A8X",
+  "marca": "ADAM",
+  "modelo": "Serie AX",
+  "precio": "6850",
+  "descripcion": "El A8X se incorporó a la Serie AX como un modelo único porque sus características de potencia y radiación le permiten ser usado como un campo cercano pero también como un monitor del mediocampo. Representa un modelo de nivel de entrada particularmente atractivo en el monitoreo del medio campo ya que ofrece una reproducción transparente de frecuencias más altas, medios claros y una excelente respuesta transitoria.",
+  "avatar": "product_avatar_1580588446082.png"
+ },
+ {
+  "id": 5,
+  "nombre": "Studio Monitor",
+  "marca": "Genelec",
+  "modelo": "8020D",
+  "precio": "7850",
+  "descripcion": "El 8020D es la última revisión de este clásico de estudio duradero, con un SPL aún mayor pero un consumo de energía menor que las versiones anteriores. Diseñado para adaptarse a la gama más amplia posible de entornos de escucha, el 8020D prospera cuando el espacio es escaso.",
+  "avatar": "product_avatar_1580588564921.png"
+ },
+ {
+  "id": 6,
+  "nombre": "Active Speaker",
+  "marca": "Genelec",
+  "modelo": "G Five",
+  "precio": "9540",
+  "descripcion": "El G Five combina generosos niveles de audición y respuesta de frecuencia extendida con el rendimiento neutral y sin color que nos ha convertido en un referente en el mundo de la grabación profesional. Esto significa que experimentará el mismo sonido equilibrado y dinámico, sea cual sea el volumen que elija para ejecutar su G Fives, ya sea que esté disfrutando de música, películas, televisión o juegos.",
+  "avatar": "product_avatar_1580588646115.png"
+ },
+ {
+  "id": 7,
+  "nombre": "Una",
+  "marca": "Prenda",
+  "modelo": "Dignas",
+  "precio": "1231",
+  "descripcion": "solo estaba bromeando Monty",
+  "image": "product_avatar_1580601606154.png"
+ }
+]

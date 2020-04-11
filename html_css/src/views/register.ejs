@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Registro'}) %>
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+
+		<% if (isAuthenticated == false) {%> 
+		
+		<!-- ACA VAN LAS COSAS DEL FORMULARIO -->
+		<div class="row titulo-seccion justify-content-center"><h1>Registrate</h1></div>
+		<div class="form-group justify-content-center">
+
+			<!-- DIV para mostrar el error de que errores hay en los campos -->
+			<div class="row mb-2">
+				<div class="col-12 pl-3">
+					<% if (typeof errors != 'undefined') { %>
+						<div>
+							<p style="color: red">Errores:</p>
+							
+								<% for (let i = 0; i < errors.length; i++)  { %>
+									
+									<li class="font-abel f-16" style="color: red"> <%= errors[i].msg %> </li>
+								
+								<% } %>
+							
+						</div>
+					<% } %>
+				</div>
+			</div>
+
+			<!-- DIV para mostrar el error de que el mail se repite -->
+			<div class="row mb-2">
+				<div class="col-12 pl-3">
+					<% if (typeof users != 'undefined') { %>
+						<div>						
+							<li class="font-abel f-16" style="color: red">Ya existe un usuario registrado con el mail: <%= users.dataValues.email %> </li>
+						</div>
+					<% } %>
+				</div>
+			</div>
+
+			<form action="/users/register" method="POST" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-12">
+						<label>Nombre:</label>
+						<input type="text" name="first_name" class="form-control" placeholder="Ej: Ana" data-name="Nombre">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div class="col-12">
+						<label>Apellido:</label>
+						<input type="text" name="last_name" class="form-control" placeholder="Ej: Pérez" data-name="Apellido">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Email:</label>
+						<input type="email"name="email" class="form-control" placeholder="Ej: email@server.com" data-name="Email">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div class="col-12">
+						<label>Contraseña:</label>
+						<input type="password" name="password" id="password"class="form-control" placeholder="******" data-name="Contraseña">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Repetir Contraseña:</label>
+						<input type="password" name="rePassword" id="repassword" class="form-control" placeholder="******" data-name="Repetir Contraseña">
+						<div class="invalid-feedback" id="repasswordMessage"> </div>
+					</div>
+					<div  class="col-12">
+						<label>Avatar:</label>
+						<input type="file" name="avatar" class="form-control" data-name="Imagen de perfil">
+						<div class="invalid-feedback"> </div>
+					</div>
+					<div  class="col-6">
+						<label></label>
+					<button type="submit" class="btn btn-amarillo btn-block" >Registrarse</button>
+					</div>
+					<div class="col-6">
+						<label></label>
+						<button class="btn btn-dark font-abel  btn-block"><a class="" href="/">Cancelar</a></button>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+
+		<% } else { %> 
+			<div class="row d-flex justify-content-center">
+				<div class="col-12">
+					<h3 class="text-center">Ya estas registrado</h3>
+						<p class="text-center">si queres crear una cuenta nueva, primero <a href="/users/logout" class="font-abel" style="text-decoration: underline;">cerrá sesión aqui</a></p>
+				</div>
+				<div class="col-12 text-center">
+					<img src="../../images/parlante_registrado.png" class="img-fluid " width="350px" alt="">
+				</div>
+			</div>
+		<% } %> 
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+	<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+	<script defer src="/js/validator.js"></script>
+	<script defer src="/js/validateRegister.js"></script>
+</body>
+</html>

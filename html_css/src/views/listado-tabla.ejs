@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Listado Usuarios'}) %>
+
+<body>
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid justify-content-center bg-gr" id="main-container">
+		<!-- Header -->
+		<%- include('partials/header') %>
+
+		<% if (isAuthenticated == false) { %>
+			<div class="text-center">
+				<h3>Oh No! No podes entrar!</h3>
+				<img src="/images/parlante_error.PNG" width="200px" alt="">
+				<p class="text-center text-amarillo font-abel">Necesitas estar <b>logueado</b> y ser <b>Administrador</b> para ingresar a esta sección</p>
+			</div>
+		<% } else if (userRole == "user"){ %>
+			<div class="text-center">
+				<h3>Oh No! No podes entrar!</h3>
+				<img src="/images/parlante_error.PNG" width="200px" alt="">
+				<p class="text-center text-amarillo font-abel f-22">Necesitas Ser <b>Administrador</b> para ingresar a esta sección</p>
+				<p class="text-center  font-abel">Tu rol actual es: <%= userRole %></p>
+				<p class="text-center  font-abel">Comunicate con el Administrador para que te de los permisos</p>
+			</div>
+		<% } else { %>
+		<!-- TITULO SECCION -->
+		<div class="row bg-dark">
+			<div class="col-12 text-center mt-3">
+				<h1>Listado de Usuarios (tabla)</h1>
+			</div>
+			<div class="col-12 text-right">
+				
+				<a href="/users/listado-tabla" class=""><i class="fa fa-list" aria-hidden="true"></i> ver listado </a>
+				<a href="/users/listado" class="ml-2"><i class="fa fa-table" aria-hidden="true"></i> ver grilla </a>
+			</div>
+		</div>
+		
+		<!-- contenido seccion -->
+		
+			<div class="table-responsive-sm mt-2">
+				<table class="table font-abel table-striped table-dark">
+					<thead>
+						<tr>
+							<th >Imagen</th>
+							<th >ID</th>
+							<th>Nombre Completo</th>
+							<th >Rol de Usuario</th>
+							<th >Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<% users.forEach(oneUser => { %> 
+							<tr>
+								<td><a href="/users/profile/<%= oneUser.id  %>"><img src="../../images/avatars/<%= oneUser.avatar %>" width="150px" class="img-thumbnail"></a>
+								</td>
+								<td><%= oneUser.id  %></td>
+								<td>
+									<h5><%= oneUser.first_name  %> <%= oneUser.last_name  %> </h5>
+									<p><%= oneUser.email  %>  </p>
+								</td>
+								<td>
+									<form action="/users/changerole" method="POST">
+										<p>Cambiar Rol:</p>
+										<input type="hidden" name="userid" value="<%= oneUser.id %>">
+									<% if(oneUser.role == "user") { %> 
+										<input type="radio" checked id="user" name="role" value="user">
+										<label for="user">User</label><br>
+										<input type="radio" id="admin" name="role" value="admin">
+										<label for="admin">Admin</label><br>
+									<% } else { %> 
+										<input type="radio"  id="user" name="role" value="user">
+										<label for="user">User</label><br>
+										<input type="radio" checked id="admin" name="role" value="admin">
+										<label for="admin">Admin</label><br>
+			
+									<% } %> 
+			
+										<button class="btn btn-warning" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Cambiar Rol</button>
+									</form>
+								</td>
+								<td>
+									<form action="/users/borrar/" method="POST">
+										<input type="hidden" name="userid" value="<%= oneUser.id %>">
+										<button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true"></i> Borrar Usuario</button>
+									</form>
+								</td>
+							</tr>
+						
+						<!-- cierre del forEach -->
+						<% })%>
+					</tbody>
+				</table>
+
+		</div> 
+	
+		<!-- FIN contenido seccion -->
+
+		<!-- fin del IF para ver si esta logueado -->
+		<% } %>
+
+		<!-- Footer -->
+		<%- include('partials/footer') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
+</body>
+
+</html>

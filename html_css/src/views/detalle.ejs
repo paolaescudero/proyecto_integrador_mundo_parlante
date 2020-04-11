@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+
+<script src="../../js/moment.min.js"></script>
+<%- include('partials/head', {title: 'Detalle producto'}) %>
+<body>
+
+    <!-- Plug in comentarios de FB -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=39509041872&autoLogAppEvents=1"></script>
+
+
+	<!-- ID Main container es el que contiene toooooodo -->
+	<div class="container-fluid" id="main-container">
+		<!-- Header -->
+        <%- include('partials/header') %>
+        
+        <!-- aca va el contenido ****************************** -->
+       
+        <div class="row mt-3 bg-dark py-3 justify-content-center">
+            <div class="col-12 col-md-4 text-right">
+                <img src="../../images/productos/<%= product.image %>" class="img-thumbnail" width="200">
+                <br> <br>
+                <p>Producto cargado por: <b><%= product.user.first_name %> <%= product.user.last_name %></b></p>
+                <p>ID: <b><%= product.user.id %></b></p>
+            </div>
+            <div class="col-12 col-md-6">
+                    
+                <h3><%= `${product.name}` %></h3>
+                <p>Marca: <%= product.brand.name %></p>
+                <p>Modelo: <%= product.model %></p>
+                <p>Precio: $<%= product.price %></p>
+                <p>Descripción: <%= product.description %></p>
+                <hr>
+                
+            <% if (isAuthenticated == true && userRole == 'admin' ) { %>    
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <form action="/borrar/<%=product.id%>" method="POST">
+                            <button class="btn btn-danger" type="submit"><i class="fa fa-trash" aria-hidden="true"></i> Borrar Producto</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <form action="/productos/editar/<%=product.id%>">
+                            <button class="btn btn-success" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar Producto</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                  
+                    <div class="col-12 col-md-6">
+                        <form action="/carrito" method="POST">
+
+                            <input type="hidden" name="product" value="<%= product.id %>">
+                            <button type="submit" class="btn-amarillo" alt="Agregar al carrito">Agregar al carrito</button>
+
+                        </form>
+                    </div>
+                </div>
+                <hr>
+            <% } else if (isAuthenticated == true && userRole == 'user' ){%>
+                
+                <div class="row">
+                  
+                    <div class="col-12 col-md-6">
+                        <form action="/carrito" method="POST">
+
+                            <input type="hidden" name="product" value="<%= product.id %>">
+                            <button type="submit" class="btn-amarillo" alt="Agregar al carrito">Agregar al carrito</button>
+
+                        </form>
+                    </div>
+                </div>
+                <hr>
+
+            <% } else { %>
+                <div class="row">
+                  
+                    <div class="col-12 col-md-6">
+                        <form action="/addToCartGuest" method="POST">
+
+                            <input type="hidden" name="product" value="<%= product.id %>">
+                            <button type="submit" class="btn-amarillo" alt="Agregar al carrito">Agregar al carrito</button>
+
+                        </form>
+                    </div>
+                </div>
+                <hr>
+
+            <% } %> 
+                    <div class="row mt-2 pl-3">
+                        <a href="/productos" class="font-abel">◄ Volver a productos</a>
+                    </div>
+            </div>
+        </div>
+        <!-- ↑↑↑ aca termina el contenido ****************************** -->
+
+        <!-- Aca empiezan los comentarios -->
+
+        <div class="col-12">
+            <div class="row text-center mt-3">
+
+            <!-- Comentarios Facebook -->
+          <!--   <div class="col-8 ">
+                <div class="fb-comments" data-href="http://localhost:3000/productos/detalle/%= product.id %>" 	
+                    data-colorscheme="dark" data-width="" data-numposts="5"></div>
+            </div>-->
+                <div class="col-12">
+                    <h3>Comentarios sobre este producto</h3>
+                </div>
+            </div> 
+            
+            <!-- Mostrar comentarios -->
+
+            <% if (comment.length > 0) { %> 
+                
+                <% comment.forEach(oneComment => { %>
+                    <div class="row mt-3 px-3  rounded">
+
+                        <div class="col-6 bg-dark p-3 rounded">
+            
+                            <span class=""><img src="../../images/avatars/<%= oneComment.user.avatar %>" width="30px" class="rounded-circle" alt="">  
+                            <%= oneComment.name %> </span>
+                        </div>
+                        
+                        <div class="col-6 f-12 p-3 bg-dark rounded text-right p-0">
+                            <!-- aca iria la foto -->
+                            
+                            <!-- <p class="">%= oneComment.id %></p> -->
+                            <%let fecha1 = Date.parse(oneComment.createdAt) %>
+                            <p class="fecha f-12"><%= new Date(oneComment.createdAt) %></p>
+
+                        </div>
+
+                            <hr class="bg-dark">
+                        <div class="col-12 bg-light text-black">
+
+                            <p class="mt-2"><%= oneComment.comment %></p>
+
+                        </div>
+                        
+        <!-- Borrar comentario -->
+
+                    <% if (isAuthenticated == true && userRole == "admin") { %> 
+                        <form action="/borrarcomentario" method="POST">
+                            <input type="hidden" value="<%= oneComment.id %>" name="commentid">
+                            <input type="hidden" value="<%=product.id%>" name="commentproduct_id">
+                            <button type="submit" class=" btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </form>
+                    <% } %> 
+                        <hr>
+                    </div>
+
+                        
+                <% }) %> 
+            <% } else { %>
+
+            <!-- Si no hay comentarios muestra esto  -->
+                <div class="col-12 text-center">
+                    <p>Todavia no hay comentarios para este producto! Empezá vos!</p>
+                    <br>
+                </div>
+
+            <% } %>  
+
+        </div> <!-- fin comentario -->
+
+        <!-- escribir comentario  -->
+
+        <div class="col-12">
+
+        <div class="row  text-center mt-3">
+            <div class="col-12">
+                <h3>Dejanos tu comentario sobre el producto</h3>
+            </div>
+        </div>
+        <% if (isAuthenticated == true) { %> 
+            <form action="/comentar"  method="POST" class="form-group">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="hidden" value="<%= product.id %>" name="product_id">
+						<label class="mt-1">Nombre:</label>
+                        <input class="form-control" type="text" value="<%= userName %> <%= userLastName %>" name="name">
+                    </div>
+                    <div class="col-12">
+						<label class="mt-1">Email:</label>
+                        <input class="form-control" type="email" value="<%= email %>" name="email">
+                    </div>
+                    <div class="col-12">
+						<label class="mt-1">Comentario:</label>
+                        <textarea class="form-control" maxlength="500" name="comment"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="form-control btn-amarillo mt-2" type="submit"> enviar </button>
+                    </div>
+                </div>
+            </form>
+        <% } else { %> 
+
+            <div class="col-12 text-center">
+                <p>Para dejarnos tu comentario tenes que estar logueado:</p>
+                <a href="/users/login">Logueate</a>
+            </div>
+        <% } %> 
+        </div>
+
+
+        <!-- Footer -->
+		<%- include('partials/footer') %>
+        <!-- ↓↓ aca termina el DIV main container ↓↓ -->
+        </div>
+
+   <script src="../../js/moment.min.js"></script>
+      
+   <script>
+        
+       
+       window.onload = function(){
+           
+        let element = document.getElementsByClassName('fecha');
+        console.log(element);
+        
+            for (let i = 0; i < element.length; i++){
+                //moment(element[i].value).fromNow();
+                let fecha = element[i].childNodes[0].data;
+              //element[i].innerHTML = moment(fecha).format('MMMM Do YYYY, h:mm:ss a')
+              element[i].innerHTML = moment(fecha).fromNow();
+            }
+           
+        }
+
+        </script> 
+
+
+       
+</body>
+ </html>
