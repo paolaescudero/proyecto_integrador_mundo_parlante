@@ -17,6 +17,8 @@ Dentro de la carpeta </b>html_css</b>
 
 2- Popular las tablas con el archivo <b>"datos.sql"</b> en el siguiente orden. <b>"users"</b>, <b>"brands"</b> y por último <b>"products"</b>
 
+Dentro de la carpeta </b>html_css</b>
+
 3- npm install y luego npm start. http://localhost:3000
 
 Dentro de la carpeta </b>html_css/dashboard</b>
