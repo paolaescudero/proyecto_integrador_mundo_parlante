@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "mundoparlante_db",
-    "host": "127.0.0.1",
+    "username": "freedbtech_violetbaggins2",
+    "password": "123456789",
+    "database": "freedbtech_violetbaggins_db2",
+    "host": "freedb.tech",
     "dialect": "mysql",
     "operatorsAliases": false
   },

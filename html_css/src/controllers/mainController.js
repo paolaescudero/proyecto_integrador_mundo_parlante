@@ -157,9 +157,7 @@ const controller = {
     },
 
 	carrito:(req, res) => {
-		console.log(req.session.cart);
-		
-		
+				
 		db.Products.findAll({
 			where:{
 				id: req.session.cart
@@ -168,9 +166,7 @@ const controller = {
 		.then(products =>{
 
 			res.render('carrito', {products});
-			console.log("$$$$$$$$$-------products-------$$$$$$$");
 			
-			console.log(products)
 		})
 		.catch(error => console.log(error));
 		

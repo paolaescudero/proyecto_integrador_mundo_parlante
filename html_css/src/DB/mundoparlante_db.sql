@@ -47,8 +47,6 @@ CREATE TABLE `comments` (
   `comment` varchar(500) NOT NULL,
   `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
   `updatedAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
- 
-
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

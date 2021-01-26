@@ -10,10 +10,9 @@ module.exports = (sequelize, dataTypes) => {
 		}
     }, 
     {
-		// tableName: 'PELICULAS'
+		tableName: 'brands',
 		timestamps: false
     });
-    
    
 	
 	return Brand;

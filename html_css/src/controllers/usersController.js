@@ -82,6 +82,8 @@ const controller = {
 						delete user[0].password;
 						//guarda al usuario en sesion
 						req.session.user = user[0];
+						console.log("<<<<<<<<<<<<<---- req.session -------------->>>>>>");
+						console.log(req.session);
 						// Setear la cookie
 						if (req.body.remember_user) {
 							res.cookie('userIdCookie', user[0].id, { maxAge: 60000 * 60 });

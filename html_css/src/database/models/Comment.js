@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
 		
     }, 
     {
-		// tableName: 'PELICULAS'
+		tableName: 'comments',
 		timestamps: true
     });
     

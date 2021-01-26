@@ -18,6 +18,8 @@
 
 html, body {
   min-height: 100vh;
+  display:flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   background-color: #000;
@@ -138,10 +140,20 @@ h3{
  
   background: #000;
   color: #ffffff;
- 
+  flex-grow: 1;
+  position: relative;
   
-  /*border: solid 1px blue; */
 }
+/* ADDED SEP 2020 */
+
+footer{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom:0;
+}
+
+/* ADDED SEP 2020 */
 .img-contacto{
   position: absolute;
   left:0;
@@ -171,7 +183,7 @@ h3{
 .footer{
   background-color: #fff;
   color:#000;
-  font-family: 'Abel', sans-serif;
+  font-family: 'Abel', sans-serif;  
 }
 .footer a{
   color:#000;
