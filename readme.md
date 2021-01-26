@@ -11,6 +11,7 @@ Es un e-commerce de parlantes de alta calidad. Permite el registro e inicio de s
 
 <h3>INSTRUCCIONES</h3>
 
+
 Dentro de la carpeta </b>html_css</b>
 
 1- Crear la base de datos con el archivo: <b>"mundoparlante_db.sql"</b>
