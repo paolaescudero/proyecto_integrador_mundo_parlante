@@ -107,7 +107,7 @@ const controller = {
 									res.redirect("/users/profile/"+user[0].id);
 								} 
 							// Redireccionamos al visitante a su perfil
-							res.redirect("http://localhost:3000"+strUrl); 	
+							res.redirect("http://mundoparlante.herokuapp.com/"+strUrl); 	
 						}
 						
 					} else {
