@@ -44,7 +44,7 @@ class BoxLastItem extends Component{
 
     /* Aca va la funcion a la q llamamos desde el componentDidMount */
     traerUltimoProducto(){
-        this.apiCall("http://localhost:3000/api/productos", this.mostrarUltimoProducto)
+        this.apiCall("http://mundoparlante.herokuapp.com/api/productos", this.mostrarUltimoProducto)
     }
 
 
@@ -58,13 +58,13 @@ class BoxLastItem extends Component{
                 <div className="card-body">
                     <div className="text-center">
                        
-                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width:"25rem"}} src={`http://localhost:3000/images/productos/${this.state.image}`} alt="image dummy"/> 
+                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width:"25rem"}} src={`http://mundoparlante.herokuapp.com/images/productos/${this.state.image}`} alt="image dummy"/> 
 
                     </div>
                     <h3>Nombre: {this.state.name}</h3>
                     <p>Precio: ${this.state.price}</p>
                     <p>{this.state.description}</p>
-                    <a target="_blank" rel="nofollow" href={`http://localhost:3000/productos/detalle/${this.state.id}`}>Ver detalle de Producto</a>
+                    <a target="_blank" rel="nofollow" href={`http://mundoparlante.herokuapp.com/productos/detalle/${this.state.id}`}>Ver detalle de Producto</a>
                 </div>
             </div>
         </div>

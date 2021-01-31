@@ -43,7 +43,7 @@ class BoxInfoProductQty extends Component{
 
     /* Aca va la funcion a la q llamamos desde el componentDidMount */
     traerProductos(){
-        this.apiCall("http://localhost:3000/api/productos", this.mostrarProductos)
+        this.apiCall("http://mundoparlante.herokuapp.com/api/productos", this.mostrarProductos)
     }
 
     render(){
