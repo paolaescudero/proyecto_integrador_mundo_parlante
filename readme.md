@@ -3,9 +3,6 @@
 <h4>http://mundoparlante.herokuapp.com/</h4>
 
 <h4>Login 🔓</h4>
-<p>user: admin@mail.com</p>
-<p>pass: admin</p>
-
 <p>user: guest@mail.com</p>
 <p>pass: guest</p>
 
