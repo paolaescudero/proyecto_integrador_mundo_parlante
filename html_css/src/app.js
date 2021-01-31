@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const cors = require('cors')
 
 const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
 const authLocals = require('./middlewares/authLocals');
@@ -23,6 +24,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(cors())
 app.use(userCookieMiddleware);
 app.use(authLocals);
 app.use(cartMiddleware);
