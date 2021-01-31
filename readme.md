@@ -1,8 +1,16 @@
 <h3>Proyecto Integrador</h3>
 <p>Este es el proyecto final para el curso de Full Stack Node blend en Digital House. </p>
-<p>http://mundoparlante.herokuapp.com/</p>
-<p>Video presentación: https://www.youtube.com/watch?v=DTiwt5Hugi0&t=5s</p>
-<p>Panel de trabajo en trello: https://trello.com/b/20wMmoXG/grupo10mundoparlante</p>
+<h4>http://mundoparlante.herokuapp.com/</h4>
+
+<h4>Login 🔓</h4>
+<p>user: admin@mail.com</p>
+<p>pass: admin</p>
+
+<p>user: guest@mail.com</p>
+<p>pass: guest</p>
+
+<h4><a href="https://paolaescudero.github.io/dashboard_mundoparlante/">Dashboard en React</a></h4>
+<h4><a href="https://www.youtube.com/watch?v=DTiwt5Hugi0&t=5s">Video presentación: </a></h4>
 
 <h3>¿Con qué lo hicimos?</h3>
 El proyecto fue realizado con NodeJS, express, ejs, mySQL y react.
