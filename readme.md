@@ -1,6 +1,6 @@
 <h3>Proyecto Integrador</h3>
 <p>Este es el proyecto final para el curso de Full Stack Node blend en Digital House. </p>
-<h4>http://mundoparlante.herokuapp.com/</h4>
+<h4>https://mundoparlante.adaptable.app/</h4>
 
 <h4>Login 🔓</h4>
 <p>user: guest@mail.com</p>
